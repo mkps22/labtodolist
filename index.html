@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <style>
+        li{
+            font-size: 22px;
+        }
+        input{
+            width: 30%;
+            height: 8vh;
+        }
+    </style>
+<head>
+   <link rel="icon" href="https://images.unsplash.com/photo-1508919801845-fc2ae1bc2a28?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW1nfGVufDB8fDB8fHww&w=1000&q=80">
+</head>
+<body>
+   <ul>
+    <li>Single click on Task defines task completed</li>
+    <li>Again click back to undo</li>
+    <li>Double click on task to delete</li>
+   </ul>
+    <input type="text" id="in" onkeypress="fun1()"/>
+    <button id="but" onclick="fun()">Add</button>
+    <ol id="ol" ></ol>
+
+    <script>
+
+        let btn=document.getElementById("but")
+        let inref=document.getElementById("in")
+        let olref=document.getElementById("ol")
+        let fun=()=>{
+            if(inref.value!=0){
+            let li=document.createElement("li")
+            li.innerHTML=inref.value 
+            olref.appendChild(li)
+            inref.value=""
+            btn.style.background=""
+            d=0
+            li.style.width="2%"
+            li.addEventListener("click",function(){
+                if(d==0){
+                li.style.textDecoration="line-through"
+                d=1
+            }
+            else{
+                li.style.textDecoration=""
+                d=0
+            }
+            })
+            li.addEventListener("dblclick",function(){
+                olref.removeChild(li)
+            })
+            
+            
+            
+        }
+        }
+       function fun1(){
+        if(li=""){
+            pass
+        }
+        else{
+            btn.style.background="green"
+        }
+       }
+            
+      
+       
+    </script>
+</body>
+</html>
